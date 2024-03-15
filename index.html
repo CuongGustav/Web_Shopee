@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="./https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subnet=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap&subnet=vietnamese">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
 </head>
 <body>
     <div class="app">
@@ -15,16 +16,48 @@
             <div class="grid">
                 <nav class="header__navbar">
                     <ul class="header__navbar-list">
-                        <li class="header__navbar-item header__navbar-item--separate">Vào cửa hành trên ứng dụng CLAB</li>
-                        <li class="header__navbar-item">Kết nối</li>    
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Vào cửa hành trên ứng dụng CLAB
+                            <!-- Header QR Code-->
+                            <div class="header__qr">
+                                <img src="./assets/img/QRCode.png" alt="QR code" class="header__qr-img">
+                                <div class="header__qr-apps">
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/AppStore.png" alt="AppStore" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/GooglePlay.png" alt="GooglePlay" class="header__qr-download-img">
+                                    </a>
+                                    <a href="" class="header__qr-link">
+                                        <img src="./assets/img/AppGallery.png" alt="AppGallery" class="header__qr-download-img">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-title--no-pointer">Kết nối</span> <!-- css cho 1 thằng cụ thể -->
+                            
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class="header__navbar-icon fa-brands fa-square-instagram"></i>
+                            </a>
+                        </li>    
                     </ul>
     
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item">
-                            <a href="" class="header__navbar-item-link">Thông báo</a>
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-regular fa-bell"></i>
+                                Thông báo
+                            </a>
                         </li>
                         <li class="header__navbar-item">
-                            <a href="" class="header__navbar-item-link">Trợ giúp</a>
+                            <a href="" class="header__navbar-item-link">
+                                <i class="header__navbar-icon fa-solid fa-circle-info"></i>
+                                Trợ giúp
+                            </a>
                         </li>
                         <li class="header__navbar-item header__navbar-item--strong header__navbar-item--separate">Đăng ký</li>
                         <li class="header__navbar-item header__navbar-item--strong">Đăng nhập</li>    
