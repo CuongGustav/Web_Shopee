@@ -1096,3 +1096,35 @@
     margin: 48px 0 120px 0;
 }
 
+/* footer */
+.footer{
+    border-top: 4px solid var(--primary-color);
+}
+.footer__grid{
+    border-top: 2px solid #efefef;
+    border-bottom: 2px solid #efefef;
+    margin-top: 100px;
+}
+.footer-content{
+    padding: 0 10px;
+}
+.footer__heading{
+    padding: 52px 0;
+    font-size: 1.4rem;
+    font-weight: 550;
+}
+.footer-list{
+    list-style-type: none;
+}
+.footer-list__item{
+    margin-top: 12px;
+}
+.footer-list__item-link{
+    font-size: 1.2rem;
+    font-weight: 350;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.footer-list__item-link:hover{
+    color:  var(--primary-color);
+}

@@ -5,6 +5,7 @@
     --primary-color: #EE4D2D;
     --border-color: #dbdbdb;
     --star-gold-color: #fdcf3c;
+    
     --header-height:120px;
     --navbar-height: 34px;
     --header-with-search-height: calc( var(--header-height) - var(--navbar-height) )
@@ -22,14 +23,6 @@ html{
 }
 
 /* Responsive */
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto; /*căn giữa khối này khi ở trong 1 khối khác*/
-}
-.grid__full-width{
-    width: 100%;
-}
 .grid__row{
     display: flex;
     flex-wrap: wrap;
