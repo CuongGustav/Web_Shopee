@@ -1,3 +1,6 @@
+.app {
+    overflow: hidden;
+}
 .header{
     height: var(--header-height);
     background: linear-gradient(0, #fe6433, #f53e2d);
@@ -448,6 +451,19 @@
     display: flex;
     align-items: center;
 }
+.header-mobile-icon{
+    display: none;
+}
+.header__mobile-navbar,
+.header__mobile-search{
+    padding: 0 12px;
+}
+.header__mobile-navbar-icon,
+.header__mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
 .header__logo{
     margin-left: 8px;
     width: 200px;
@@ -503,6 +519,7 @@
 .header__cart-wrap{
     cursor: pointer;
     padding: 8px;
+    -webkit-tab-highlight-color:transparent ;
 }
 .header__cart-wrap:hover .header__cart-list{
     display: flex;
@@ -567,6 +584,8 @@
 .header__cart-list-item{
     padding-left: 0;
     list-style-type: none;
+    max-height: 56vh;
+    overflow-y: auto;
 }
 .header__cart-item{
     display: flex;
@@ -792,6 +811,46 @@
     display: block;
 }
 
+/* Header sort bar */
+.header__sort-bar{
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+}
+.header__sort-item{
+    flex: 1;
+    list-style-type: none;
+    
+}
+.header__sort-item-link{
+    padding-left: 40%;
+    text-decoration: none;
+    align-items: center; /* Add this */
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+    position: relative;
+}
+.header__sort-item-link::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+    transform: translateY(-50%);
+}
+
 /* Container */
 .app__container{
     background-color: #f5f5f5;
@@ -848,6 +907,53 @@
 .category-item__link:hover{
     right: -4px;
     color: var(--primary-color);
+}
+
+
+/* Mobile Category*/
+.mobile-category{
+    display: none;
+}
+.mobile-category__list{
+    display: flex;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: auto;   /* khi đối tượng con vượt quá dối tượng cha theo chiều ngang thì xinh ra thanh scroll*/   
+}
+.mobile-category__list::-webkit-scrollbar{
+    display: none;
+}
+.mobile-category__item{
+    list-style-type: none;
+    flex-shrink: 0; /* thẻ con không bị co lại khi bị ảnh hưởng bởi kích thước  thẻ cha*/
+    border-radius: 3px;
+    margin: 0 10px 0 0;
+}
+.mobile-category__item:nth-of-type(3n+1){
+    background-color: #87AFD8;
+} 
+.mobile-category__item:nth-of-type(3n+2){
+    background-color: #76C9BD;
+} 
+.mobile-category__item:nth-of-type(3n+3){
+    background-color: #88CF81;
+} 
+
+.mobile-category__link{
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    line-height: 2rem;
+    height: 4rem;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 110px;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 /*Home sort + filter*/
@@ -1103,7 +1209,7 @@
 .footer__grid{
     border-top: 2px solid #efefef;
     border-bottom: 2px solid #efefef;
-    margin-top: 100px;
+    margin-top: 100px !important;
 }
 .footer-content{
     padding: 0 10px;
@@ -1112,6 +1218,9 @@
     padding: 52px 0;
     font-size: 1.4rem;
     font-weight: 550;
+}
+.footer__heading-express{
+    padding-bottom: 52px;
 }
 .footer-list{
     list-style-type: none;
@@ -1127,4 +1236,115 @@
 }
 .footer-list__item-link:hover{
     color:  var(--primary-color);
+}
+/*footer express*/
+.footer-list-express{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.footer-list__express_item{
+    list-style-type: none;
+    padding: 4px;
+    margin-right: 8px;
+    margin-top: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border-radius: 2px;
+}
+/*footer link download*/
+.footer_icon_follow_social{
+    margin-right: 5px;
+}
+
+.footer_img_download{
+    display:  flex;
+    margin-top: 20px;
+}
+.footer_qr_download{
+    background-color: var(--white-color);
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2); 
+}
+.footer_store_download{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+.footer_store_download_item{
+    display: block;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    text-decoration: none !important;
+}
+
+.footer__national{
+    display:  flex !important;
+    justify-content: space-between; /* Đặt các phần tử ở hai bên */
+    align-items: center; 
+    padding: 40px 0;
+}
+.footer__year{
+    font-size: 1.3rem;
+    font-weight: 350;
+}
+.footer__national{
+    display: flex;
+    flex: 1;
+    justify-content: flex-end; /* Đẩy các phần tử bên trong về bên phải */
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 350;
+}
+.footer__national-item{
+    font-size: 1.3rem;
+    font-weight: 350;
+    padding: 0 5px;
+    border-right: 0.8px solid #ccc;
+}
+.footer__national-item:last-child{
+    border: 0;
+}
+
+/* footer information*/
+.footer__info{
+    background-color:#f5f5f5;
+    padding: 40px 0;
+}
+.footer__info_category{
+    display:  flex;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+.footer__info_categoty-item{
+    padding: 0 25px;
+    font-size: 1.3rem;
+    font-weight: 350;
+    border-right: 0.8px solid #ccc;
+}
+.footer__info_categoty-item:last-child{
+    border: 0;
+}
+
+/* .footer__info_img{
+    background-image: url(https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9765d68a8945750d.png);
+    background-position: 14.391143911439114% 99.41176470588235%;
+    background-size: 551.6666666666666% 477.77777777777777%;
+} */
+.footer__info_img{
+    display: flex;
+    justify-content: center;
+    height: 48px;
+}
+.footer__infor_content_df,
+.footer__infor_content{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+    font-size: 1.3rem;
+    font-weight: 350;
+}
+.footer__infor_content_df{
+    margin-bottom: 25px;
 }
